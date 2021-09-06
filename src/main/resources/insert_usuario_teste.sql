@@ -1,0 +1,2 @@
+insert into usuario (id,email, senha,perfil) values(1,'admin@email.com','$2a$10$LOqePml/koRGsk2YAIOFI.1YNKZg7EsQ5BAIuYP1nWOyYRl21dlne', 'ROLE_ADMIN');
+insert into usuario (id,email, senha,perfil) values(2,'usuario@email.com','$2a$10$LOqePml/koRGsk2YAIOFI.1YNKZg7EsQ5BAIuYP1nWOyYRl21dlne', 'ROLE_USUARIO');
