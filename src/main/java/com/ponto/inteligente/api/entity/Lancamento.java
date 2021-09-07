@@ -3,6 +3,7 @@ package com.ponto.inteligente.api.entity;
 import com.ponto.inteligente.api.enums.TipoEnum;
 import java.io.Serializable;
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -22,7 +23,7 @@ import javax.persistence.TemporalType;
 @Table(name = "lancamento")
 public class Lancamento implements Serializable {
 
-    private static final long serialVersionUID = -6396755950434951961L;
+    private static final long serialVersionUID = 6524560251526772839L;
 
     private Long id;
     private Date data;
@@ -46,10 +47,6 @@ public class Lancamento implements Serializable {
         this.id = id;
     }
 
-    /**
-     *
-     * @return
-     */
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "data", nullable = false)
     public Date getData() {
@@ -79,6 +76,7 @@ public class Lancamento implements Serializable {
     }
 
     @Column(name = "data_criacao", nullable = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
     public Date getDataCriacao() {
         return dataCriacao;
     }
@@ -88,6 +86,7 @@ public class Lancamento implements Serializable {
     }
 
     @Column(name = "data_atualizacao", nullable = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
     public Date getDataAtualizacao() {
         return dataAtualizacao;
     }

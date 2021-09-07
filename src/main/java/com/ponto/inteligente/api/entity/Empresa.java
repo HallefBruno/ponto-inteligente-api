@@ -3,6 +3,7 @@ package com.ponto.inteligente.api.entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,7 +21,7 @@ import javax.persistence.Temporal;
 @Table(name = "empresa")
 public class Empresa implements Serializable {
 
-    private static final long serialVersionUID = 4862991749577621407L;
+    private static final long serialVersionUID = 3960436649365666213L;
 
     private Long id;
     private String razaoSocial;
@@ -30,6 +31,14 @@ public class Empresa implements Serializable {
     private List<Funcionario> funcionarios;
 
     public Empresa() {
+    }
+
+    public Empresa(Long id, String razaoSocial, String cnpj, Date dataCriacao, Date dataAtualizacao) {
+        this.id = id;
+        this.razaoSocial = razaoSocial;
+        this.cnpj = cnpj;
+        this.dataCriacao = dataCriacao;
+        this.dataAtualizacao = dataAtualizacao;
     }
 
     @Id
@@ -106,5 +115,4 @@ public class Empresa implements Serializable {
         return "Empresa [id=" + id + ", razaoSocial=" + razaoSocial + ", cnpj=" + cnpj + ", dataCriacao=" + dataCriacao
                 + ", dataAtualizacao=" + dataAtualizacao + "]";
     }
-
 }
