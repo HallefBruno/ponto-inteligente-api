@@ -1,8 +1,6 @@
 package com.ponto.inteligente.api.dtos;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import org.hibernate.validator.constraints.br.CNPJ;
 import org.hibernate.validator.constraints.br.CPF;
@@ -29,8 +27,8 @@ public class CadastroPJDto {
     }
 
     @NotEmpty(message = "Nome não pode ser vazio.")
-    @Max(value =  200, message = "Nome deve conter no máximo 200 caracteres.")
-    @Min(value =  3, message = "Nome deve conter no mínimo 3 caracteres.")
+    //@Max(value =  200, message = "Nome deve conter no máximo 200 caracteres.")
+    //@Min(value =  3, message = "Nome deve conter no mínimo 3 caracteres.")
     public String getNome() {
         return nome;
     }
@@ -40,8 +38,8 @@ public class CadastroPJDto {
     }
 
     @NotEmpty(message = "Email não pode ser vazio.")
-    @Max(value =  200, message = "Nome deve conter no máximo 200 caracteres.")
-    @Min(value =  3, message = "Nome deve conter no mínimo 3 caracteres.")
+    //@Max(value =  200, message = "Nome deve conter no máximo 200 caracteres.")
+    //@Min(value =  3, message = "Nome deve conter no mínimo 3 caracteres.")
     @Email(message = "Email inválido.")
     public String getEmail() {
         return email;
@@ -71,8 +69,8 @@ public class CadastroPJDto {
     }
 
     @NotEmpty(message = "Razão social não pode ser vazio.")
-    @Max(value =  200, message = "Razão social deve conter no máximo 200 caracteres.")
-    @Min(value =  3, message = "Razão social deve conter no mínimo 3 caracteres.")
+    //@Max(value =  200, message = "Razão social deve conter no máximo 200 caracteres.")
+    //@Min(value =  3, message = "Razão social deve conter no mínimo 3 caracteres.")
     public String getRazaoSocial() {
         return razaoSocial;
     }

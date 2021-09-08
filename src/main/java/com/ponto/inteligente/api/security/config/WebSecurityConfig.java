@@ -46,9 +46,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-
+        
         httpSecurity.csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-        .and().authorizeRequests().antMatchers("/","/auth/**","/h2-console/**","/swagger-ui-custom.html","/api-docs/**", "/swagger-ui/**").permitAll()//.and().authorizeRequests().antMatchers("/","/auth/**","/h2-console/**","/swagger-ui-custom.html","/v3/api-docs/**","/swagger-ui/**").permitAll()
+        .and().authorizeRequests().antMatchers("/","/auth/**","/h2-console/**","/v2/api-docs/**","/v3/api-docs/**", "/swagger-resources/**", "/configuration/security", "/swagger-ui.html","/swagger-ui/**", "/webjars/**").permitAll()//.and().authorizeRequests().antMatchers("/","/auth/**","/h2-console/**","/swagger-ui-custom.html","/v3/api-docs/**","/swagger-ui/**").permitAll()
         .anyRequest().authenticated();
         httpSecurity.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
         httpSecurity.headers().cacheControl();
